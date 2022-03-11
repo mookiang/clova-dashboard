@@ -1,14 +1,11 @@
 import { atom, selector } from "recoil";
 
-export const minuteState = atom({
-  key: "minutes",
-  default: 0,
-});
+export enum Categories {
+  "HOME" = "Home",
+  "BILLING" = "Billing"
+}
 
-export const hourSelector = selector({
-  key: "hours",
-  get: ({get}) => {
-    const minutes = get(minuteState);
-    return minutes / 60;
-  }
-})
+export const categoryState = atom<Categories>({
+  key: "category",
+  default: Categories.HOME,
+});
