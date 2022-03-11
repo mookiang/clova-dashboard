@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Link, useMatch, useNavigate } from "react-router-dom";
-import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import { Link, useMatch } from "react-router-dom";
+import { motion } from "framer-motion";
 import { useRecoilState } from "recoil";
 import { Categories, categoryState } from "../atoms";
 import React from "react";
