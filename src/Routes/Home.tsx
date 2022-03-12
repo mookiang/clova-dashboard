@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import Title from "../Components/Title";
+import Header from "../Components/Header";
 import Line from "../Components/Line";
+import Title from "../Components/Title";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -8,16 +9,18 @@ const Wrapper = styled.div`
 
 const Contents = styled.div`
   width: 100%;
-  margin: 50px;
+  margin: 30px 50px;
   color: ${(props) => props.theme.primary.black};
-`
+`;
 
 function Home() {
   return (
     <Wrapper>
-      <Title />
+      <Header />
       <Line />
-      <Contents>안녕하세요</Contents>
+      <Contents>
+        <Title />
+      </Contents>
     </Wrapper>
   );
 }

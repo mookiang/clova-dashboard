@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { Link, useMatch } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { Categories, categoryState } from "../atoms";
 import React from "react";
 
 const Nav = styled.nav`
-  background-color: ${(props) => props.theme.primary.blue};
+  background-color: ${(props) => props.theme.primary.sidebar.background};
   width: 280px;
   height: 100vh;
 `;
@@ -32,9 +32,13 @@ const Item = styled(motion.li)<{ isActive: boolean }>`
   font-size: 15px;
   transition: color 0.3s ease-in-out;
   color: ${(props) =>
-    props.isActive ? props.theme.primary.blue : props.theme.primary.gray};
+    props.isActive
+      ? props.theme.primary.sidebar.background
+      : props.theme.primary.sidebar.text.normal};
   background-color: ${(props) =>
-    props.isActive ? props.theme.primary.gray : props.theme.primary.blue};
+    props.isActive
+      ? props.theme.primary.background
+      : props.theme.primary.sidebar.background};
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.primary.black};
@@ -50,7 +54,7 @@ const Item = styled(motion.li)<{ isActive: boolean }>`
 function Sidebar() {
   const homeMatch = useMatch("/");
   const billingMatch = useMatch("/billing");
-  const [category, setCategory] = useRecoilState(categoryState);
+  const setCategory = useSetRecoilState(categoryState);
   const clickItem = (event: React.MouseEvent<HTMLLIElement>) => {
     setCategory(event.currentTarget.getAttribute("value") as any);
   };

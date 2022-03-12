@@ -2,19 +2,37 @@ import { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   primary: {
+    background: "#f1f1f1",
     white: "#fafafa",
     gray: "#eee;",
-    blue: "#9980FA",
-    black: "#2f3640",
+    blue: "#0984e3",
+    black: "#b2bec3",
     text: {
       title: {
         color: "#4a4a4a",
         size: "28px"
       }
     },
+    header: {
+      background: "#fcfcfc",
+    },
     line: {
       color: "#d9d9d9",
       height: "3px"
+    },
+    sidebar: {
+      background: "#5352ed",
+      text: {
+        normal: "#eee",
+        hover: "#b2bec3"
+      }
+    },
+    billing: {
+      fillter: {
+        background: "#fcfcfc",
+        border: "#d9d9d9"
+      }
     }
   }
 };
+

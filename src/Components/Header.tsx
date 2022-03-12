@@ -2,18 +2,19 @@ import styled from "styled-components";
 import { useRecoilValue } from "recoil";
 import { categoryState } from "../atoms";
 
-const HO = styled.h1`
+const HT = styled.h2`
+  padding: 20px 30px;
   display: flex;
-  padding: 20px;
   width: 100%;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 14px;
+  background-color: ${(props) => props.theme.primary.header.background};
   color: ${(props) => props.theme.primary.text.title.color};
 `;
 
-function Title() {
+function Header() {
   const category = useRecoilValue(categoryState);
-  return <HO>{category}</HO>;
+  return <HT>CLOVA Dashboard {">"} {category}</HT>;
 }
 
-export default Title;
+export default Header;

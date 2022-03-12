@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
-
-import Header from "./Layouts/Header";
 import Home from "./Routes/Home";
 import Billing from "./Routes/Billing";
 import Sidebar from "./Layouts/Sidebar";
