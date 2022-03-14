@@ -1,5 +1,10 @@
+export interface IButton {
+  text: string;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
 export interface IBillingFilter {
   item: string;
   items: Array<string>;
-  setFilter: (event: React.FormEvent<HTMLSelectElement>) => void;
+  onChange: (event: React.FormEvent<HTMLSelectElement>) => void;
 }

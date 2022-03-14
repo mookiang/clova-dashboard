@@ -30,3 +30,20 @@ export const serviceSelector = atom<IBillingFilter[]>({
   key: "selector",
   default: [],
 });
+
+export enum Platforms {
+  "ALL" = "전체",
+  "PUB" = "민간",
+  "FIN" = "금융",
+  "GOV" = "공공"
+}
+
+export const platformState = atom<Platforms>({
+  key: "platform",
+  default: Platforms.ALL,
+});
+
+export const platformSelector = atom<IBillingFilter[]>({
+  key: "selector",
+  default: [],
+});

@@ -14,6 +14,30 @@ declare module "styled-components" {
           size: string;
         };
       };
+      table: {
+        th: {
+          color: string;
+          background: string;
+        };
+        tr: {
+          odd: string;
+          even: string;
+        };
+        td: {
+          color: string;
+          background: string;
+        }
+      };
+      button: {
+        background: string;
+        border: string;
+        color: string;
+        hover: {
+          background: string;
+          border: string;
+          color: string;
+        };
+      };
       header: {
         background: string;
       };
