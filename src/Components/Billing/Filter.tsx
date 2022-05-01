@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
-import { serviceState, Services } from "../../atoms";
+import { serviceState, Services, platformState, Platforms } from "../../atoms";
 import Selector from "./Selector";
 import Button from "../Button";
 import React from "react";
@@ -58,7 +58,20 @@ function Filter() {
     Services.SPEECH,
     Services.AITEMS,
   ];
+
+  const [platform, setPlatform] = useRecoilState(platformState);
+  const platforms = [
+    Platforms.ALL,
+    Platforms.PUB,
+    Platforms.FIN,
+    Platforms.GOV,
+  ];
+
   const changeService = (event: React.FormEvent<HTMLSelectElement>) => {
+    setService(event.currentTarget.value as any);
+  };
+
+  const changeSelector = (event: React.FormEvent<HTMLSelectElement>) => {
     setService(event.currentTarget.value as any);
   };
 
@@ -73,14 +86,14 @@ function Filter() {
           <Label>상품</Label>
           <Selector item={service} items={services} onChange={changeService} />
         </Temp>
-        {/* <Temp>
+        <Temp>
           <Label>플랫폼</Label>
-          <Selector item={service} items={services} onChange={changeService} />
+          <Selector item={service} items={platforms} onChange={changeSelector} />
         </Temp>
         <Temp>
           <Label>리전</Label>
           <Selector item={service} items={services} onChange={changeService} />
-        </Temp> */}
+        </Temp>
         <BoxWrapper>
           <Button text="초기화" onClick={clickResetButton} />
         </BoxWrapper>

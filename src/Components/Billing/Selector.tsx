@@ -10,6 +10,9 @@ const Select = styled.select`
   font-size: 12px;
   border: 2px solid ${(props) => props.theme.primary.billing.fillter.border};
   border-radius: 5px;
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
   cursor: pointer;
   &:hover {
   }
