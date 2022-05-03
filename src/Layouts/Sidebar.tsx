@@ -56,6 +56,7 @@ function Sidebar() {
   const billingMatch = useMatch("/billing");
   const setCategory = useSetRecoilState(categoryState);
   const clickItem = (event: React.MouseEvent<HTMLLIElement>) => {
+    // console.log(event.currentTarget.getAttribute("value"));
     setCategory(event.currentTarget.getAttribute("value") as any);
   };
 
@@ -69,7 +70,7 @@ function Sidebar() {
             value={Categories.HOME}
             onClick={clickItem}
           >
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </Item>
           <Item
             isActive={billingMatch !== null}

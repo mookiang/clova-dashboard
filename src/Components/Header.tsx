@@ -1,6 +1,9 @@
 import styled from "styled-components";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
 import { categoryState } from "../atoms";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { toUpperCaseFirstLetter } from "../Common/common";
 
 const HT = styled.h2`
   padding: 20px 30px;
@@ -13,8 +16,16 @@ const HT = styled.h2`
 `;
 
 function Header() {
-  const category = useRecoilValue(categoryState);
-  return <HT>CLOVA Dashboard {">"} {category}</HT>;
+  const [category, setCategory] = useRecoilState(categoryState);
+  let { pathname } = useLocation();
+  useEffect(() => {
+    setCategory(toUpperCaseFirstLetter(pathname.substring(1)) as any);
+  }, []);
+  return (
+    <HT>
+      CLOVA Dashboard {">"} {category}
+    </HT>
+  );
 }
 
 export default Header;

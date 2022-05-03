@@ -61,7 +61,6 @@ function Filter() {
 
   const [platform, setPlatform] = useRecoilState(platformState);
   const platforms = [
-    Platforms.ALL,
     Platforms.PUB,
     Platforms.FIN,
     Platforms.GOV,
@@ -94,6 +93,9 @@ function Filter() {
           <Label>리전</Label>
           <Selector item={service} items={services} onChange={changeService} />
         </Temp>
+        {/* <Temp>
+          <Label>달력</Label>
+        </Temp> */}
         <BoxWrapper>
           <Button text="초기화" onClick={clickResetButton} />
         </BoxWrapper>

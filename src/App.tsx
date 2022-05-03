@@ -12,12 +12,11 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Header /> */}
         <Container>
           <Sidebar />
           <Routes>
+            <Route path="/home" element={<Home />}></Route>
             <Route path="/billing" element={<Billing />}></Route>
-            <Route path="/" element={<Home />}></Route>
           </Routes>
         </Container>
       </Router>
