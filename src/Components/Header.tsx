@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { categoryState } from "../atoms";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -20,7 +20,7 @@ function Header() {
   let { pathname } = useLocation();
   useEffect(() => {
     setCategory(toUpperCaseFirstLetter(pathname.substring(1)) as any);
-  }, []);
+  }, [pathname, setCategory]);
   return (
     <HT>
       CLOVA Dashboard {">"} {category}

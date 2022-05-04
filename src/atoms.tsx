@@ -18,6 +18,9 @@ export enum Services {
   "AICALL" = "CLOVA AiCall",
   "DUBBING" = "CLOVA Dubbing",
   "SPEECH" = "CLOVA Speech",
+  "FACESIGN" = "CLOVA FaceSign",
+  "EKYC" = "CLOVA eKYC",
+  "NSML" = "CLOVA NSML",
   "AITEMS" = "AiTEMS",
 }
 

@@ -52,7 +52,7 @@ const Item = styled(motion.li)<{ isActive: boolean }>`
 `;
 
 function Sidebar() {
-  const homeMatch = useMatch("/");
+  const homeMatch = useMatch("/home");
   const billingMatch = useMatch("/billing");
   const setCategory = useSetRecoilState(categoryState);
   const clickItem = (event: React.MouseEvent<HTMLLIElement>) => {

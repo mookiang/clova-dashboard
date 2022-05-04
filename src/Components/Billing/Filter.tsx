@@ -74,7 +74,7 @@ function Filter() {
     setService(event.currentTarget.value as any);
   };
 
-  const clickResetButton = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const resetFilltering = (event: React.MouseEvent<HTMLButtonElement>) => {
     console.log(event.currentTarget.value as any);
   };
 
@@ -87,17 +87,17 @@ function Filter() {
         </Temp>
         <Temp>
           <Label>플랫폼</Label>
-          <Selector item={service} items={platforms} onChange={changeSelector} />
+          <Selector item={platform} items={platforms} onChange={changeSelector} />
         </Temp>
-        <Temp>
+        {/* <Temp>
           <Label>리전</Label>
           <Selector item={service} items={services} onChange={changeService} />
-        </Temp>
+        </Temp> */}
         {/* <Temp>
           <Label>달력</Label>
         </Temp> */}
         <BoxWrapper>
-          <Button text="초기화" onClick={clickResetButton} />
+          <Button text="초기화" onClick={resetFilltering} />
         </BoxWrapper>
       </Box>
     </>
