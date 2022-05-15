@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../Components/Header";
+import Header from "../Layouts/Header";
 import Line from "../Components/Line";
 import Title from "../Components/Title";
 
